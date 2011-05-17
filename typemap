@@ -1,0 +1,88 @@
+# this typemap is only used by xsubpp
+# to marshal THIS in xs code
+QSvgGenerator *                         		T_PTROBJ_0000
+QSvgWidget *                            		T_PTROBJ_0001
+QSysInfo *                              		T_PTROBJ_0002
+QFlag *                                 		T_PTROBJ_0003
+QSvgRenderer *                          		T_PTROBJ_0004
+QIncompatibleFlag *                     		T_PTROBJ_0005
+QInternal *                             		T_PTROBJ_0006
+QBool *                                 		T_PTROBJ_0007
+
+################################################################
+INPUT
+T_PTROBJ_0000
+    if (sv_derived_from($arg, \"Qt::Svg::QSvgGenerator\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Svg::QSvgGenerator\");
+
+T_PTROBJ_0001
+    if (sv_derived_from($arg, \"Qt::Svg::QSvgWidget\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Svg::QSvgWidget\");
+
+T_PTROBJ_0002
+    if (sv_derived_from($arg, \"Qt::Core::QSysInfo\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Core::QSysInfo\");
+
+T_PTROBJ_0003
+    if (sv_derived_from($arg, \"Qt::Core::QFlag\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Core::QFlag\");
+
+T_PTROBJ_0004
+    if (sv_derived_from($arg, \"Qt::Svg::QSvgRenderer\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Svg::QSvgRenderer\");
+
+T_PTROBJ_0005
+    if (sv_derived_from($arg, \"Qt::Core::QIncompatibleFlag\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Core::QIncompatibleFlag\");
+
+T_PTROBJ_0006
+    if (sv_derived_from($arg, \"Qt::Core::QInternal\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Core::QInternal\");
+
+T_PTROBJ_0007
+    if (sv_derived_from($arg, \"Qt::Core::QBool\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Core::QBool\");
+
+
+################################################################
+OUTPUT
+T_PTROBJ_0000
+    sv_setref_pv($arg, \"Qt::Svg::QSvgGenerator\", (void *)$var);
+
+T_PTROBJ_0001
+    sv_setref_pv($arg, \"Qt::Svg::QSvgWidget\", (void *)$var);
+
+T_PTROBJ_0002
+    sv_setref_pv($arg, \"Qt::Core::QSysInfo\", (void *)$var);
+
+T_PTROBJ_0003
+    sv_setref_pv($arg, \"Qt::Core::QFlag\", (void *)$var);
+
+T_PTROBJ_0004
+    sv_setref_pv($arg, \"Qt::Svg::QSvgRenderer\", (void *)$var);
+
+T_PTROBJ_0005
+    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
+
+T_PTROBJ_0006
+    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
+
+T_PTROBJ_0007
+    sv_setref_pv($arg, \"Qt::Core::QBool\", (void *)$var);
+
