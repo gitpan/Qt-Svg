@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,41 +24,48 @@ Qt::Svg::QSvgGenerator
 
 =over
 
-=item    QSvgGenerator()
+=item   QSvgGenerator()
 
-=item    ~QSvgGenerator()
+=item   ~QSvgGenerator()
 
-=item   QString description()
+=item  QString description()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   QIODevice * outputDevice()
+=item  QIODevice * outputDevice()
 
-=item   int resolution()
+=item  int resolution()
 
-=item   void setDescription(const QString & description)
+=item  void setDescription()
 
-=item   void setFileName(const QString & fileName)
+=item  void setFileName()
 
-=item   void setOutputDevice(QIODevice * outputDevice)
+=item  void setOutputDevice()
 
-=item   void setResolution(int dpi)
+=item  void setResolution()
 
-=item   void setSize(const QSize & size)
+=item  void setSize()
 
-=item   void setTitle(const QString & title)
+=item  void setTitle()
 
-=item   void setViewBox(const QRect & viewBox)
+=item  void setViewBox()
 
-=item   void setViewBox(const QRectF & viewBox)
+=item  void setViewBox()
 
-=item   QSize size()
+=item  QSize size()
 
-=item   QString title()
+=item  QString title()
 
-=item   QRect viewBox()
+=item  QRect viewBox()
 
-=item   QRectF viewBoxF()
+=item  QRectF viewBoxF()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

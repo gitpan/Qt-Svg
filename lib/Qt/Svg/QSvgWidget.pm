@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +24,30 @@ Qt::Svg::QSvgWidget
 
 =over
 
-=item    QSvgWidget(QWidget * parent = 0)
+=item   QSvgWidget()
 
-=item    QSvgWidget(QWidget * parent)
+=item   QSvgWidget( = 0)
 
-=item    QSvgWidget(const QString & file, QWidget * parent = 0)
+=item   QSvgWidget(, )
 
-=item    QSvgWidget(const QString & file, QWidget * parent)
+=item   QSvgWidget(,  = 0)
 
-=item    ~QSvgWidget()
+=item   ~QSvgWidget()
 
-=item   void load(const QString & file)
+=item  void load()
 
-=item   void load(const QByteArray & contents)
+=item  void load()
 
-=item   QSvgRenderer * renderer()
+=item  QSvgRenderer * renderer()
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

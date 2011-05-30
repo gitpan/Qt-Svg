@@ -5,9 +5,11 @@ QSvgWidget *                            		T_PTROBJ_0001
 QSysInfo *                              		T_PTROBJ_0002
 QFlag *                                 		T_PTROBJ_0003
 QSvgRenderer *                          		T_PTROBJ_0004
-QIncompatibleFlag *                     		T_PTROBJ_0005
-QInternal *                             		T_PTROBJ_0006
-QBool *                                 		T_PTROBJ_0007
+Qt *                                    		T_PTROBJ_0005
+QGraphicsSvgItem *                      		T_PTROBJ_0006
+QIncompatibleFlag *                     		T_PTROBJ_0007
+QInternal *                             		T_PTROBJ_0008
+QBool *                                 		T_PTROBJ_0009
 
 ################################################################
 INPUT
@@ -42,18 +44,30 @@ T_PTROBJ_0004
         Perl_croak(aTHX_ \"$var is not of type Qt::Svg::QSvgRenderer\");
 
 T_PTROBJ_0005
+    if (sv_derived_from($arg, \"Qt\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt\");
+
+T_PTROBJ_0006
+    if (sv_derived_from($arg, \"Qt::Svg::QGraphicsSvgItem\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::Svg::QGraphicsSvgItem\");
+
+T_PTROBJ_0007
     if (sv_derived_from($arg, \"Qt::Core::QIncompatibleFlag\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QIncompatibleFlag\");
 
-T_PTROBJ_0006
+T_PTROBJ_0008
     if (sv_derived_from($arg, \"Qt::Core::QInternal\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QInternal\");
 
-T_PTROBJ_0007
+T_PTROBJ_0009
     if (sv_derived_from($arg, \"Qt::Core::QBool\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
@@ -78,11 +92,17 @@ T_PTROBJ_0004
     sv_setref_pv($arg, \"Qt::Svg::QSvgRenderer\", (void *)$var);
 
 T_PTROBJ_0005
-    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
+    sv_setref_pv($arg, \"Qt\", (void *)$var);
 
 T_PTROBJ_0006
-    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Svg::QGraphicsSvgItem\", (void *)$var);
 
 T_PTROBJ_0007
+    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
+
+T_PTROBJ_0008
+    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
+
+T_PTROBJ_0009
     sv_setref_pv($arg, \"Qt::Core::QBool\", (void *)$var);
 

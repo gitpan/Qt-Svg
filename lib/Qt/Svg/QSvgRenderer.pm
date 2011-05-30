@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,67 +24,74 @@ Qt::Svg::QSvgRenderer
 
 =over
 
-=item    QSvgRenderer(QObject * parent = 0)
+=item   QSvgRenderer()
 
-=item    QSvgRenderer(QObject * parent)
+=item   QSvgRenderer( = 0)
 
-=item    QSvgRenderer(const QString & filename, QObject * parent = 0)
+=item   QSvgRenderer(, )
 
-=item    QSvgRenderer(const QString & filename, QObject * parent)
+=item   QSvgRenderer(,  = 0)
 
-=item    QSvgRenderer(const QByteArray & contents, QObject * parent = 0)
+=item   QSvgRenderer(, )
 
-=item    QSvgRenderer(const QByteArray & contents, QObject * parent)
+=item   QSvgRenderer(,  = 0)
 
-=item    QSvgRenderer(QXmlStreamReader * contents, QObject * parent = 0)
+=item   QSvgRenderer(, )
 
-=item    QSvgRenderer(QXmlStreamReader * contents, QObject * parent)
+=item   QSvgRenderer(,  = 0)
 
-=item    ~QSvgRenderer()
+=item   ~QSvgRenderer()
 
-=item   bool animated()
+=item  bool animated()
 
-=item   int animationDuration()
+=item  int animationDuration()
 
-=item   QRectF boundsOnElement(const QString & id)
+=item  QRectF boundsOnElement()
 
-=item   int currentFrame()
+=item  int currentFrame()
 
-=item   QSize defaultSize()
+=item  QSize defaultSize()
 
-=item   bool elementExists(const QString & id)
+=item  bool elementExists()
 
-=item   int framesPerSecond()
+=item  int framesPerSecond()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   bool load(const QString & filename)
+=item  bool load()
 
-=item   bool load(const QByteArray & contents)
+=item  bool load()
 
-=item   bool load(QXmlStreamReader * contents)
+=item  bool load()
 
-=item   QMatrix matrixForElement(const QString & id)
+=item  QMatrix matrixForElement()
 
-=item   void render(QPainter * p)
+=item  void render()
 
-=item   void render(QPainter * p, const QRectF & bounds)
+=item  void render(, )
 
-=item   void render(QPainter * p, const QString & elementId, const QRectF & bounds = QRectF())
+=item  void render(, , )
 
-=item   void render(QPainter * p, const QString & elementId, const QRectF & bounds)
+=item  void render(, ,  = QRectF())
 
-=item   void setCurrentFrame(int arg0)
+=item  void setCurrentFrame()
 
-=item   void setFramesPerSecond(int num)
+=item  void setFramesPerSecond()
 
-=item   void setViewBox(const QRect & viewbox)
+=item  void setViewBox()
 
-=item   void setViewBox(const QRectF & viewbox)
+=item  void setViewBox()
 
-=item   QRect viewBox()
+=item  QRect viewBox()
 
-=item   QRectF viewBoxF()
+=item  QRectF viewBoxF()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back
