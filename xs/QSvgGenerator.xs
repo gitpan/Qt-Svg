@@ -91,7 +91,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setDescription()
+## void setDescription(const QString & description)
 void
 QSvgGenerator::setDescription(...)
 PREINIT:
@@ -103,7 +103,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setFileName()
+## void setFileName(const QString & fileName)
 void
 QSvgGenerator::setFileName(...)
 PREINIT:
@@ -115,7 +115,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setOutputDevice()
+## void setOutputDevice(QIODevice * outputDevice)
 void
 QSvgGenerator::setOutputDevice(...)
 PREINIT:
@@ -134,7 +134,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setResolution()
+## void setResolution(int dpi)
 void
 QSvgGenerator::setResolution(...)
 PREINIT:
@@ -146,7 +146,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setSize()
+## void setSize(const QSize & size)
 void
 QSvgGenerator::setSize(...)
 PREINIT:
@@ -158,7 +158,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setTitle()
+## void setTitle(const QString & title)
 void
 QSvgGenerator::setTitle(...)
 PREINIT:
@@ -170,8 +170,8 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setViewBox()
-## void setViewBox()
+## void setViewBox(const QRect & viewBox)
+## void setViewBox(const QRectF & viewBox)
 void
 QSvgGenerator::setViewBox(...)
 PREINIT:

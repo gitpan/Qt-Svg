@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QPaintDevice/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -36,21 +35,21 @@ Qt::Svg::QSvgGenerator
 
 =item  int resolution()
 
-=item  void setDescription()
+=item  void setDescription(const QString & description)
 
-=item  void setFileName()
+=item  void setFileName(const QString & fileName)
 
-=item  void setOutputDevice()
+=item  void setOutputDevice(QIODevice * outputDevice)
 
-=item  void setResolution()
+=item  void setResolution(int dpi)
 
-=item  void setSize()
+=item  void setSize(const QSize & size)
 
-=item  void setTitle()
+=item  void setTitle(const QString & title)
 
-=item  void setViewBox()
+=item  void setViewBox(const QRect & viewBox)
 
-=item  void setViewBox()
+=item  void setViewBox(const QRectF & viewBox)
 
 =item  QSize size()
 

@@ -18,14 +18,14 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QSvgRenderer()
-##  QSvgRenderer( = 0)
-##  QSvgRenderer(, )
-##  QSvgRenderer(,  = 0)
-##  QSvgRenderer(, )
-##  QSvgRenderer(,  = 0)
-##  QSvgRenderer(, )
-##  QSvgRenderer(,  = 0)
+##  QSvgRenderer(QObject * parent)
+##  QSvgRenderer(QObject * parent = 0)
+##  QSvgRenderer(const QString & filename, QObject * parent)
+##  QSvgRenderer(const QString & filename, QObject * parent = 0)
+##  QSvgRenderer(const QByteArray & contents, QObject * parent)
+##  QSvgRenderer(const QByteArray & contents, QObject * parent = 0)
+##  QSvgRenderer(QXmlStreamReader * contents, QObject * parent)
+##  QSvgRenderer(QXmlStreamReader * contents, QObject * parent = 0)
   void
 QSvgRenderer::new(...)
 PREINIT:
@@ -201,7 +201,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QRectF boundsOnElement()
+## QRectF boundsOnElement(const QString & id)
 void
 QSvgRenderer::boundsOnElement(...)
 PREINIT:
@@ -241,7 +241,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool elementExists()
+## bool elementExists(const QString & id)
 void
 QSvgRenderer::elementExists(...)
 PREINIT:
@@ -281,9 +281,9 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool load()
-## bool load()
-## bool load()
+## bool load(const QString & filename)
+## bool load(const QByteArray & contents)
+## bool load(QXmlStreamReader * contents)
 void
 QSvgRenderer::load(...)
 PREINIT:
@@ -331,7 +331,7 @@ PPCODE:
         break;
     }
 
-## QMatrix matrixForElement()
+## QMatrix matrixForElement(const QString & id)
 void
 QSvgRenderer::matrixForElement(...)
 PREINIT:
@@ -345,10 +345,10 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void render()
-## void render(, )
-## void render(, , )
-## void render(, ,  = QRectF())
+## void render(QPainter * p)
+## void render(QPainter * p, const QRectF & bounds)
+## void render(QPainter * p, const QString & elementId, const QRectF & bounds)
+## void render(QPainter * p, const QString & elementId, const QRectF & bounds = QRectF())
 void
 QSvgRenderer::render(...)
 PREINIT:
@@ -439,7 +439,7 @@ PPCODE:
         break;
     }
 
-## void setCurrentFrame()
+## void setCurrentFrame(int arg0)
 void
 QSvgRenderer::setCurrentFrame(...)
 PREINIT:
@@ -451,7 +451,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setFramesPerSecond()
+## void setFramesPerSecond(int num)
 void
 QSvgRenderer::setFramesPerSecond(...)
 PREINIT:
@@ -463,8 +463,8 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setViewBox()
-## void setViewBox()
+## void setViewBox(const QRect & viewbox)
+## void setViewBox(const QRectF & viewbox)
 void
 QSvgRenderer::setViewBox(...)
 PREINIT:

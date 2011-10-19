@@ -18,10 +18,10 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QSvgWidget()
-##  QSvgWidget( = 0)
-##  QSvgWidget(, )
-##  QSvgWidget(,  = 0)
+##  QSvgWidget(QWidget * parent)
+##  QSvgWidget(QWidget * parent = 0)
+##  QSvgWidget(const QString & file, QWidget * parent)
+##  QSvgWidget(const QString & file, QWidget * parent = 0)
   void
 QSvgWidget::new(...)
 PREINIT:
@@ -105,8 +105,8 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## void load()
-## void load()
+## void load(const QString & file)
+## void load(const QByteArray & contents)
 void
 QSvgWidget::load(...)
 PREINIT:

@@ -18,10 +18,10 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QGraphicsSvgItem()
-##  QGraphicsSvgItem( = 0)
-##  QGraphicsSvgItem(, )
-##  QGraphicsSvgItem(,  = 0)
+##  QGraphicsSvgItem(QGraphicsItem * parentItem)
+##  QGraphicsSvgItem(QGraphicsItem * parentItem = 0)
+##  QGraphicsSvgItem(const QString & fileName, QGraphicsItem * parentItem)
+##  QGraphicsSvgItem(const QString & fileName, QGraphicsItem * parentItem = 0)
   void
 QGraphicsSvgItem::new(...)
 PREINIT:
@@ -152,8 +152,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void paint(, , )
-## void paint(, ,  = 0)
+## void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+## void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 void
 QGraphicsSvgItem::paint(...)
 PREINIT:
@@ -243,7 +243,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setCachingEnabled()
+## void setCachingEnabled(bool arg0)
 void
 QGraphicsSvgItem::setCachingEnabled(...)
 PREINIT:
@@ -255,7 +255,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setElementId()
+## void setElementId(const QString & id)
 void
 QGraphicsSvgItem::setElementId(...)
 PREINIT:
@@ -267,7 +267,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setMaximumCacheSize()
+## void setMaximumCacheSize(const QSize & size)
 void
 QGraphicsSvgItem::setMaximumCacheSize(...)
 PREINIT:
@@ -279,7 +279,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setSharedRenderer()
+## void setSharedRenderer(QSvgRenderer * renderer)
 void
 QGraphicsSvgItem::setSharedRenderer(...)
 PREINIT:

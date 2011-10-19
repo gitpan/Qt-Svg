@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QGraphicsObject/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -24,13 +23,13 @@ Qt::Svg::QGraphicsSvgItem
 
 =over
 
-=item   QGraphicsSvgItem()
+=item   QGraphicsSvgItem(QGraphicsItem * parentItem)
 
-=item   QGraphicsSvgItem( = 0)
+=item   QGraphicsSvgItem(QGraphicsItem * parentItem = 0)
 
-=item   QGraphicsSvgItem(, )
+=item   QGraphicsSvgItem(const QString & fileName, QGraphicsItem * parentItem)
 
-=item   QGraphicsSvgItem(,  = 0)
+=item   QGraphicsSvgItem(const QString & fileName, QGraphicsItem * parentItem = 0)
 
 =item  QRectF boundingRect()
 
@@ -40,19 +39,19 @@ Qt::Svg::QGraphicsSvgItem
 
 =item  QSize maximumCacheSize()
 
-=item  void paint(, , )
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item  void paint(, ,  = 0)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
 =item  QSvgRenderer * renderer()
 
-=item  void setCachingEnabled()
+=item  void setCachingEnabled(bool arg0)
 
-=item  void setElementId()
+=item  void setElementId(const QString & id)
 
-=item  void setMaximumCacheSize()
+=item  void setMaximumCacheSize(const QSize & size)
 
-=item  void setSharedRenderer()
+=item  void setSharedRenderer(QSvgRenderer * renderer)
 
 =item  int type()
 

@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QWidget/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -24,19 +23,19 @@ Qt::Svg::QSvgWidget
 
 =over
 
-=item   QSvgWidget()
+=item   QSvgWidget(QWidget * parent)
 
-=item   QSvgWidget( = 0)
+=item   QSvgWidget(QWidget * parent = 0)
 
-=item   QSvgWidget(, )
+=item   QSvgWidget(const QString & file, QWidget * parent)
 
-=item   QSvgWidget(,  = 0)
+=item   QSvgWidget(const QString & file, QWidget * parent = 0)
 
 =item   ~QSvgWidget()
 
-=item  void load()
+=item  void load(const QString & file)
 
-=item  void load()
+=item  void load(const QByteArray & contents)
 
 =item  QSvgRenderer * renderer()
 

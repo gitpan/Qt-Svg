@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Core::QObject/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -24,21 +23,21 @@ Qt::Svg::QSvgRenderer
 
 =over
 
-=item   QSvgRenderer()
+=item   QSvgRenderer(QObject * parent)
 
-=item   QSvgRenderer( = 0)
+=item   QSvgRenderer(QObject * parent = 0)
 
-=item   QSvgRenderer(, )
+=item   QSvgRenderer(const QString & filename, QObject * parent)
 
-=item   QSvgRenderer(,  = 0)
+=item   QSvgRenderer(const QString & filename, QObject * parent = 0)
 
-=item   QSvgRenderer(, )
+=item   QSvgRenderer(const QByteArray & contents, QObject * parent)
 
-=item   QSvgRenderer(,  = 0)
+=item   QSvgRenderer(const QByteArray & contents, QObject * parent = 0)
 
-=item   QSvgRenderer(, )
+=item   QSvgRenderer(QXmlStreamReader * contents, QObject * parent)
 
-=item   QSvgRenderer(,  = 0)
+=item   QSvgRenderer(QXmlStreamReader * contents, QObject * parent = 0)
 
 =item   ~QSvgRenderer()
 
@@ -46,41 +45,41 @@ Qt::Svg::QSvgRenderer
 
 =item  int animationDuration()
 
-=item  QRectF boundsOnElement()
+=item  QRectF boundsOnElement(const QString & id)
 
 =item  int currentFrame()
 
 =item  QSize defaultSize()
 
-=item  bool elementExists()
+=item  bool elementExists(const QString & id)
 
 =item  int framesPerSecond()
 
 =item  bool isValid()
 
-=item  bool load()
+=item  bool load(const QString & filename)
 
-=item  bool load()
+=item  bool load(const QByteArray & contents)
 
-=item  bool load()
+=item  bool load(QXmlStreamReader * contents)
 
-=item  QMatrix matrixForElement()
+=item  QMatrix matrixForElement(const QString & id)
 
-=item  void render()
+=item  void render(QPainter * p)
 
-=item  void render(, )
+=item  void render(QPainter * p, const QRectF & bounds)
 
-=item  void render(, , )
+=item  void render(QPainter * p, const QString & elementId, const QRectF & bounds)
 
-=item  void render(, ,  = QRectF())
+=item  void render(QPainter * p, const QString & elementId, const QRectF & bounds = QRectF())
 
-=item  void setCurrentFrame()
+=item  void setCurrentFrame(int arg0)
 
-=item  void setFramesPerSecond()
+=item  void setFramesPerSecond(int num)
 
-=item  void setViewBox()
+=item  void setViewBox(const QRect & viewbox)
 
-=item  void setViewBox()
+=item  void setViewBox(const QRectF & viewbox)
 
 =item  QRect viewBox()
 
