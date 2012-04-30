@@ -5,11 +5,12 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 6;
+use Test::More tests => 7;
 BEGIN {
 use_ok('Qt::Svg');
 use_ok('Qt::Svg');
 use_ok('Qt::Svg::QSvgGenerator');
+use_ok('Qt::Svg::Template');
 use_ok('Qt::Svg::QSvgRenderer');
 use_ok('Qt::Svg::QGraphicsSvgItem');
 use_ok('Qt::Svg::QSvgWidget');
